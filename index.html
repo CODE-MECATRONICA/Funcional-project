@@ -14,35 +14,31 @@
 
 <body>
 
-<header>
+<div class="terminal">
 
-    <h1>Sistema de Asistencia</h1>
+<pre id="pantalla">
 
-    <p>Registro estudiantil</p>
+===== SISTEMA DE ASISTENCIA =====
 
-</header>
+1. Registrar estudiante
+2. Registrar entrada
+3. Registrar salida
+4. Mostrar estudiante
+5. Salir
 
-<section class="formulario">
+Seleccione una opcion:
 
-    <h2>Registrar estudiante</h2>
+</pre>
 
-    <input type="text" id="nombre" placeholder="Nombre">
+<div class="entrada">
 
-    <input type="text" id="documento" placeholder="Documento">
+<input type="text" id="comando" placeholder="Ingrese opcion">
 
-    <input type="text" id="curso" placeholder="Curso">
+<button onclick="ejecutar()">Enviar</button>
 
-    <button onclick="registrar()">Registrar</button>
+</div>
 
-</section>
-
-<section class="lista">
-
-    <h2>Estudiantes registrados</h2>
-
-    <ul id="registros"></ul>
-
-</section>
+</div>
 
 <script src="script.js"></script>
 
