@@ -1,54 +1,88 @@
-let estudiantes = JSON.parse(localStorage.getItem("estudiantes")) || [];
+const pantalla = document.getElementById("pantalla");
 
-mostrarRegistros();
+function ejecutar() {
 
-function registrar() {
+    const comando = document.getElementById("comando").value;
 
-    let nombre = document.getElementById("nombre").value;
-    let documento = document.getElementById("documento").value;
-    let curso = document.getElementById("curso").value;
+    switch(comando) {
 
-    if(nombre === "" || documento === "" || curso === "") {
+        case "1":
 
-        alert("Complete todos los campos");
-        return;
+            pantalla.innerHTML += `
+
+> Registrar estudiante
+
+Cédula: 108541
+Nombre: julain andres ariza
+Carrera: admin empresa
+
+Estudiante registrado exitosamente.
+
+`;
+
+            break;
+
+        case "2":
+
+            pantalla.innerHTML += `
+
+> Registrar entrada
+
+Hora entrada: 22:00
+
+Entrada registrada correctamente.
+
+`;
+
+            break;
+
+        case "3":
+
+            pantalla.innerHTML += `
+
+> Registrar salida
+
+Hora salida: 11:00
+
+Salida registrada correctamente.
+
+`;
+
+            break;
+
+        case "4":
+
+            pantalla.innerHTML += `
+
+> Mostrar estudiante
+
+Nombre: julain andres ariza
+Carrera: admin empresa
+
+`;
+
+            break;
+
+        case "5":
+
+            pantalla.innerHTML += `
+
+Saliendo del sistema...
+
+`;
+
+            break;
+
+        default:
+
+            pantalla.innerHTML += `
+
+Opcion invalida
+
+`;
 
     }
 
-    let estudiante = {
-
-        nombre,
-        documento,
-        curso
-
-    };
-
-    estudiantes.push(estudiante);
-
-    localStorage.setItem("estudiantes", JSON.stringify(estudiantes));
-
-    mostrarRegistros();
-
-    document.getElementById("nombre").value = "";
-    document.getElementById("documento").value = "";
-    document.getElementById("curso").value = "";
-
-}
-
-function mostrarRegistros() {
-
-    let lista = document.getElementById("registros");
-
-    lista.innerHTML = "";
-
-    estudiantes.forEach(estudiante => {
-
-        lista.innerHTML += `
-            <li>
-                ${estudiante.nombre} - ${estudiante.curso}
-            </li>
-        `;
-
-    });
+    document.getElementById("comando").value = "";
 
 }
