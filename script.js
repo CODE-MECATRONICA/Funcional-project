@@ -1,81 +1,99 @@
 const pantalla = document.getElementById("pantalla");
 
+let estudiantes = [];
+
 function ejecutar() {
 
     const comando = document.getElementById("comando").value;
 
-    switch(comando) {
+    if(comando === "1") {
 
-        case "1":
+        const nombre = prompt("Ingrese nombre:");
+        const cedula = prompt("Ingrese cédula:");
+        const carrera = prompt("Ingrese carrera:");
 
-            pantalla.innerHTML += `
+        const estudiante = {
+
+            nombre,
+            cedula,
+            carrera
+
+        };
+
+        estudiantes.push(estudiante);
+
+        pantalla.innerHTML += `
 
 > Registrar estudiante
 
-Cédula: 108541
-Nombre: julain andres ariza
-Carrera: admin empresa
+Cédula: ${cedula}
+Nombre: ${nombre}
+Carrera: ${carrera}
 
 Estudiante registrado exitosamente.
 
 `;
 
-            break;
+    }
 
-        case "2":
+    else if(comando === "2") {
 
-            pantalla.innerHTML += `
+        pantalla.innerHTML += `
 
 > Registrar entrada
 
-Hora entrada: 22:00
-
-Entrada registrada correctamente.
+Hora entrada registrada correctamente.
 
 `;
 
-            break;
+    }
 
-        case "3":
+    else if(comando === "3") {
 
-            pantalla.innerHTML += `
+        pantalla.innerHTML += `
 
 > Registrar salida
 
-Hora salida: 11:00
-
-Salida registrada correctamente.
+Hora salida registrada correctamente.
 
 `;
 
-            break;
+    }
 
-        case "4":
+    else if(comando === "4") {
 
-            pantalla.innerHTML += `
+        pantalla.innerHTML += `
 
-> Mostrar estudiante
-
-Nombre: julain andres ariza
-Carrera: admin empresa
+===== ESTUDIANTES =====
 
 `;
 
-            break;
-
-        case "5":
+        estudiantes.forEach(estudiante => {
 
             pantalla.innerHTML += `
+Nombre: ${estudiante.nombre}
+Cédula: ${estudiante.cedula}
+Carrera: ${estudiante.carrera}
+
+`;
+
+        });
+
+    }
+
+    else if(comando === "5") {
+
+        pantalla.innerHTML += `
 
 Saliendo del sistema...
 
 `;
 
-            break;
+    }
 
-        default:
+    else {
 
-            pantalla.innerHTML += `
+        pantalla.innerHTML += `
 
 Opcion invalida
 
