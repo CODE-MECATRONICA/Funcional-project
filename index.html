@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
     <meta charset="UTF-8">
@@ -17,34 +18,31 @@
 
     <h1>Sistema de Asistencia</h1>
 
-    <p>Proyecto desarrollado en Java utilizando POO</p>
+    <p>Registro estudiantil</p>
 
 </header>
 
-<section class="contenido">
+<section class="formulario">
 
-    <div class="card">
-        <h2>Registro</h2>
-        <p>Registro de estudiantes.</p>
-    </div>
+    <h2>Registrar estudiante</h2>
 
-    <div class="card">
-        <h2>Asistencia</h2>
-        <p>Control de asistencia.</p>
-    </div>
+    <input type="text" id="nombre" placeholder="Nombre">
 
-    <div class="card">
-        <h2>Validaciones</h2>
-        <p>Manejo de excepciones.</p>
-    </div>
+    <input type="text" id="documento" placeholder="Documento">
+
+    <input type="text" id="curso" placeholder="Curso">
+
+    <button onclick="registrar()">Registrar</button>
 
 </section>
 
-<footer>
+<section class="lista">
 
-    <p>Proyecto Java - 2026</p>
+    <h2>Estudiantes registrados</h2>
 
-</footer>
+    <ul id="registros"></ul>
+
+</section>
 
 <script src="script.js"></script>
 
